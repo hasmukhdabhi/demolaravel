@@ -45,3 +45,4 @@ Route::get('/about', [PageController::class, 'about']);
 Route::get('/services', [PageController::class, 'services']);
 Route::get('/contact', [PageController::class, 'contact']);
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/crud', [PageController::class, 'crud']);

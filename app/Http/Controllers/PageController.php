@@ -23,6 +23,10 @@ class PageController extends Controller
         
         return view('contact');
     }
+    public function crud () {
+        
+        return view('crud');
+    }
 
 
 }
