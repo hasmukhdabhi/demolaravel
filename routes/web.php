@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,6 @@ Route::get('/services', [PageController::class, 'services']);
 Route::get('/contact', [PageController::class, 'contact']);
 Route::get('/', [HomeController::class, 'index']);
 // Route::get('/crud', [PageController::class, 'crud']);
+
+// crud routes
+Route::resource('items', ItemController::class);
