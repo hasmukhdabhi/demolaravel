@@ -33,27 +33,18 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        // new code
-        // if ($request->hasFile('image')) {
-        //     $image = $request->file('image');
-        //     $name = time() . '.' . $image->getClientOriginalExtension();
-        //     $destinationPath = public_path('/images');
-        //     $image->move($destinationPath, $name);
-        // }
-
-        // Item::create([
-        //     'name' => $request->name,
-        //     'description' => $request->description,
-        //     'image' => $name,
-        // ]);
-
-        // return redirect()->route('items.index')->with('success', 'Item created successfully.');
+        $request->validate(
+            [
+                'name' => 'required',
+                'description' => 'required',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]
+            // [
+            //     'name.required' => 'The name is required.',
+            //     'description.required' => 'The description is required.',
+            //     'image.image' => 'The uploaded file must be an image.',
+            // ]
+        );
 
         $imageName = null;
         if ($request->hasFile('image')) {
@@ -73,6 +64,8 @@ class ItemController extends Controller
     public function show(string $id)
     {
         //
+        $items = Item::find($id);
+        return view('items.show', compact('item'));
     }
 
     /**
