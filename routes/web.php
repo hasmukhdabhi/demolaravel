@@ -49,4 +49,22 @@ Route::get('/', [HomeController::class, 'index']);
 // Route::get('/crud', [PageController::class, 'crud']);
 
 // crud routes
-Route::resource('items', ItemController::class);
+// Route::resource('items', ItemController::class);
+
+// index route 
+Route::get('/items', [ItemController::class, 'index'])->name('items.index');
+
+// create route
+Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');
+
+// store route
+Route::post('/items', [ItemController::class, 'store'])->name('items.store');
+
+// edit route
+Route::get('/items/{id}/edit', [ItemController::class, 'edit'])->name('items.edit');
+
+// update route
+Route::put('/items/{id}', [ItemController::class, 'update'])->name('items.update');
+
+// delete route
+Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('items.destroy');
