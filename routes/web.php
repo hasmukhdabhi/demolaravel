@@ -68,3 +68,14 @@ Route::put('/items/{id}', [ItemController::class, 'update'])->name('items.update
 
 // delete route
 Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('items.destroy');
+
+
+
+// Example routes
+Route::get('post/{id?}/comment/{commentid?}', function (string $id = null, string $comment = null) {
+    if ($id) {
+        return "<h1>Post ID : " . $id . "</h1><h2> Comment ID : " . $comment . "</h2>";
+    } else {
+        return "<h1>No ID Found</h1>";
+    }
+});
