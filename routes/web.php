@@ -37,7 +37,7 @@ Route::get('/', function () {
 
 // Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
 
-Route::get('/user', [UserController::class, 'index']);
+// Route::get('/user', [UserController::class, 'index']);
 
 // Resource routes go here
 Route::resource('products', ProductsController::class);
