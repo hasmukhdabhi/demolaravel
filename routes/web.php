@@ -83,8 +83,6 @@ Route::get('post/{id?}/comment/{commentid?}', function (string $id = null, strin
 });
 
 // register a route for the component
-Route::get('/component', function () {
-    return view('component');
-});
+
 
 Route::get('/counter', Counter::class);
