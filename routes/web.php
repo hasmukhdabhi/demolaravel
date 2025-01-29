@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use PHPUnit\Framework\Constraint\Count;
+use App\Livewire\Counter;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +81,10 @@ Route::get('post/{id?}/comment/{commentid?}', function (string $id = null, strin
         return "<h1>No ID Found</h1>";
     }
 });
+
+// register a route for the component
+Route::get('/component', function () {
+    return view('component');
+});
+
+Route::get('/counter', Counter::class);
