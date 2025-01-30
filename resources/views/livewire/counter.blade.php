@@ -8,7 +8,8 @@
 </head>
 <body>
     <div>
-        <h1>{{ $count }}</h1>
+        <p><strong>Hello from counter blade Page</strong></p>
+        <h2>{{ $count }}</h2>
         <button wire:click="increment">++</button>
         <button wire:click="decrement">--</button>
     </div>
