@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use PHPUnit\Framework\Constraint\Count;
 use App\Livewire\Counter;
+use App\Livewire\Searchbox;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,3 +87,10 @@ Route::get('post/{id?}/comment/{commentid?}', function (string $id = null, strin
 
 
 Route::get('/counter', Counter::class);
+
+// Route::get('/searchbox', Searchbox::class);
+Route::get('/searchbox', function () {
+    return view('livewire.searchbox');
+});
+
+Route::view('search', 'usersearch');
